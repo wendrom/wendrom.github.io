@@ -1,0 +1,19 @@
+
+body {
+	font: normal 14px/160% Verdana, sans-serif;
+}
+
+.section:first-child {
+	background: black;
+	color: white;
+}
+
+.section:nth-child(2) {
+	background: #8C2026;
+	color: white;
+}
+
+.section:nth-child(3) {
+	background: #EEE;
+	color: #222;
+}
