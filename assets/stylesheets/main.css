@@ -8,6 +8,11 @@ body {
 	src: url(../fonts/Fontin.otf);
 }
 
+@font-face {
+	font-family: Signika;
+	src: url(../fonts/Signika.ttf);
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font: bold 40px/100% Fontin;
 	margin-bottom: 5px;
@@ -87,6 +92,10 @@ header .right {
 	float: right;
 }
 
+.section {
+	z-index: 0;
+}
+
 .section .background {
 	position: fixed;
 	top: -50%;
@@ -110,29 +119,76 @@ header .right {
 	margin: auto;
 	max-width: 800px;
 	padding: 10px;
+	z-index: 2;
+}
+.section .content .slide-header {
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 0;
 }
 .section .content .info-box {
 	background: rgba(0, 0, 0, 0.2);
 	border-radius: 3px;
+	font: normal 20px/160% Verdana;
 	padding: 10px 15px;
+}
+.section .demo {
+	background: #EEE;
+	border-radius: 3px;
+	box-shadow: 0 5px 0 #CCC;
+	color: black;
+	font: normal 22px/160% Verdana;
+	margin: 15px 0;
+	padding: 10px 15px;
+	position: relative;
+	text-decoration: none;
+	top: 15px;
+}
+.section .demo:hover {
+	background: white;
+	box-shadow: 0 5px 0 #DDD;
+}
+
+.section .graphic {
+	opacity: 0.5;
+	position: absolute;
+	left: 50%;
+	margin: auto;
+	margin-left: -250px;
+	margin-top: -250px;
+	top: 50%;
+	z-index: -1;
+}
+.section .graphic img {
+	max-width: 500px;
 }
 
 .section:first-child {
 	color: white;
 	font: normal 20px/160% Verdana;
 }
-#intro-header {
-	text-align: center;
-	margin-bottom: 20px;
-	margin-top: 0;
+#intro-graphic {
+	opacity: 1;
 }
 
 .section:nth-child(2) {
 	background: #8C2026;
 	color: white;
 }
+#fritillo-header {
+	font: bold 50px/100% Signika;
+}
+#fritillo-logo {
+	vertical-align: bottom;
+	width: 50px;
+}
 
 .section:nth-child(3) {
+	background: #222;
+	color: #EEE;
+}
+
+.section:nth-child(4) {
 	background: #040404;
 	color: #EEE;
 }

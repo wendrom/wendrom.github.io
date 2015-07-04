@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	$('#fullpage').fullpage({
-		anchors: ['intro', 'fritillo', 'identity']
+		anchors: ['intro', 'fritillo', 'gemjam']
 	});
 	
 });
