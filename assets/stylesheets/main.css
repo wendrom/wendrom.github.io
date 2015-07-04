@@ -208,7 +208,7 @@ header .right {
 	h5 { font-size: 32px; }
 	h6 { font-size: 30px; }
 	
-	.section:first-child {
+	.section .content .info-box {
 		font: normal 16px/160% Verdana;
 	}
 	
