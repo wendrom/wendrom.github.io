@@ -1322,13 +1322,12 @@ function Edit() {
         if (Game.rail[l].up) {
           out.paths[l].x2 = Game.rail[l].point.x;
           out.paths[l].y2 = Game.rail[l].point.y - 1;
+        } else if (Game.rail[l].left) {
+          out.paths[l].x2 = Game.rail[l].point.x - 1;
+          out.paths[l].y2 = Game.rail[l].point.y;
         } else if (Game.rail[l].down) {
           out.paths[l].x2 = Game.rail[l].point.x;
           out.paths[l].y2 = Game.rail[l].point.y + 1;
-        }
-        if (Game.rail[l].left) {
-          out.paths[l].x2 = Game.rail[l].point.x - 1;
-          out.paths[l].y2 = Game.rail[l].point.y;
         } else if (Game.rail[l].right) {
           out.paths[l].x2 = Game.rail[l].point.x + 1;
           out.paths[l].y2 = Game.rail[l].point.y;
