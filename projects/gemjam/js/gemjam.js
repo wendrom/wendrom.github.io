@@ -1316,21 +1316,37 @@ function Edit() {
           out.goals[l].y = Game.zone[l].point.y;
       }
       for(var l in Game.rail) {
-        out.paths[l] = {};
-        out.paths[l].x1 = Game.rail[l].point.x;
-        out.paths[l].y1 = Game.rail[l].point.y;
         if (Game.rail[l].up) {
-          out.paths[l].x2 = Game.rail[l].point.x;
-          out.paths[l].y2 = Game.rail[l].point.y - 1;
-        } else if (Game.rail[l].left) {
-          out.paths[l].x2 = Game.rail[l].point.x - 1;
-          out.paths[l].y2 = Game.rail[l].point.y;
-        } else if (Game.rail[l].down) {
-          out.paths[l].x2 = Game.rail[l].point.x;
-          out.paths[l].y2 = Game.rail[l].point.y + 1;
-        } else if (Game.rail[l].right) {
-          out.paths[l].x2 = Game.rail[l].point.x + 1;
-          out.paths[l].y2 = Game.rail[l].point.y;
+          var newPath = {};
+          newPath.x1 = Game.rail[l].point.x;
+          newPath.y1 = Game.rail[l].point.y;
+          newPath.x2 = Game.rail[l].point.x;
+          newPath.y2 = Game.rail[l].point.y - 1;
+          out.paths[] = newPath;
+        }
+        if (Game.rail[l].down) {
+          var newPath = {};
+          newPath.x1 = Game.rail[l].point.x;
+          newPath.y1 = Game.rail[l].point.y;
+          newPath.x2 = Game.rail[l].point.x;
+          newPath.y2 = Game.rail[l].point.y + 1;
+          out.paths[] = newPath;
+        }
+        if (Game.rail[l].left) {
+          var newPath = {};
+          newPath.x1 = Game.rail[l].point.x;
+          newPath.y1 = Game.rail[l].point.y;
+          newPath.x2 = Game.rail[l].point.x - 1;
+          newPath.y2 = Game.rail[l].point.y;
+          out.paths[] = newPath;
+        }
+        if (Game.rail[l].right) {
+          var newPath = {};
+          newPath.x1 = Game.rail[l].point.x;
+          newPath.y1 = Game.rail[l].point.y;
+          newPath.x2 = Game.rail[l].point.x + 1;
+          newPath.y2 = Game.rail[l].point.y;
+          out.paths[] = newPath;
         }
       }
       
