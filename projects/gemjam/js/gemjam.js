@@ -279,7 +279,7 @@ var All = {
     gems: {
         each: function(each) {
             for (i=0;i<Game.gems;i++){
-                each(i);  
+                each(i);
             }
         },
         row: function(n,each) {
@@ -1262,36 +1262,75 @@ function Edit() {
     };
     
     this.export = function() {
-        
-        var out = {};
-        out.name = 'Gem Jam!';
-        out.gem = [];
-        out.zone = [];
-        out.rail = [];
-        for(var l in Game.gem){
-            out.gem[l] = {};
-            out.gem[l].type = Game.gem[l].type;
-            out.gem[l].point = {};
-            out.gem[l].point.x = Game.gem[l].point.x;
-            out.gem[l].point.y = Game.gem[l].point.y;
+      /*
+      var out = {};
+      out.name = 'Gem Jam!';
+      out.gem = [];
+      out.zone = [];
+      out.rail = [];
+      for(var l in Game.gem){
+          out.gem[l] = {};
+          out.gem[l].type = Game.gem[l].type;
+          out.gem[l].point = {};
+          out.gem[l].point.x = Game.gem[l].point.x;
+          out.gem[l].point.y = Game.gem[l].point.y;
+      }
+      for(var l in Game.zone){
+          out.zone[l] = {};
+          out.zone[l].type = Game.zone[l].type;
+          out.zone[l].point = {};
+          out.zone[l].point.x = Game.zone[l].point.x;
+          out.zone[l].point.y = Game.zone[l].point.y;
+      }
+      for(var l in Game.rail){
+          out.rail[l] = {};
+          out.rail[l].point = {};
+          out.rail[l].point.x = Game.rail[l].point.x;
+          out.rail[l].point.y = Game.rail[l].point.y;
+          out.rail[l].up = Game.rail[l].up;
+          out.rail[l].down = Game.rail[l].down;
+          out.rail[l].left = Game.rail[l].left;
+          out.rail[l].right = Game.rail[l].right;
+      }
+      */
+      
+      var out = {};
+      out.name = '';
+      out.difficulty = 'easy';
+      out.size = {};
+      out.size.w = 9;
+      out.size.h = 9;
+      out.gems = [];
+      out.goals = [];
+      out.paths = [];
+      for(var l in Game.gem){
+          out.gems[l] = {};
+          out.gems[l].type = Game.gem[l].type;
+          out.gems[l].x = Game.gem[l].point.x;
+          out.gems[l].y = Game.gem[l].point.y;
+      }
+      for(var l in Game.zone){
+          out.goals[l] = {};
+          out.goals[l].type = Game.zone[l].type;
+          out.goals[l].x = Game.zone[l].point.x;
+          out.goals[l].y = Game.zone[l].point.y;
+      }
+      for(var l in Game.rail) {
+        if (Game.rail[l].up || Game.rail[l].left) {
+          out.paths[l] = {};
+          out.paths[l].x1 = Game.rail[l].point.x;
+          out.paths[l].y1 = Game.rail[l].point.y;
+          if (Game.rail[l].up) {
+            out.paths[l].x2 = Game.rail[l].point.x;
+            out.paths[l].y2 = Game.rail[l].point.y - 1;
+          }
+          if (Game.rail[l].left) {
+            out.paths[l].x2 = Game.rail[l].point.x - 1;
+            out.paths[l].y2 = Game.rail[l].point.y;
+          }
         }
-        for(var l in Game.zone){
-            out.zone[l] = {};
-            out.zone[l].type = Game.zone[l].type;
-            out.zone[l].point = {};
-            out.zone[l].point.x = Game.zone[l].point.x;
-            out.zone[l].point.y = Game.zone[l].point.y;
-        }
-        for(var l in Game.rail){
-            out.rail[l] = {};
-            out.rail[l].point = {};
-            out.rail[l].point.x = Game.rail[l].point.x;
-            out.rail[l].point.y = Game.rail[l].point.y;
-            out.rail[l].up = Game.rail[l].up;
-            out.rail[l].down = Game.rail[l].down;
-            out.rail[l].left = Game.rail[l].left;
-            out.rail[l].right = Game.rail[l].right;
-        }
-        $('#puzzle').text(JSON.stringify(out));
+      }
+      
+      $('#puzzle').text(JSON.stringify(out, null, "\t"));
     };
 }
