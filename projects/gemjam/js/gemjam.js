@@ -1331,6 +1331,6 @@ function Edit() {
         }
       }
       
-      $('#puzzle').text(JSON.stringify(out, null, "\t"));
+      $('#puzzle').text(JSON.stringify(out, null, "\s"));
     };
 }
