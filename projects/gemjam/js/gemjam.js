@@ -1322,7 +1322,7 @@ function Edit() {
           newPath.y1 = Game.rail[l].point.y;
           newPath.x2 = Game.rail[l].point.x;
           newPath.y2 = Game.rail[l].point.y - 1;
-          out.paths[] = newPath;
+          out.paths[out.paths.length] = newPath;
         }
         if (Game.rail[l].down) {
           var newPath = {};
@@ -1330,7 +1330,7 @@ function Edit() {
           newPath.y1 = Game.rail[l].point.y;
           newPath.x2 = Game.rail[l].point.x;
           newPath.y2 = Game.rail[l].point.y + 1;
-          out.paths[] = newPath;
+          out.paths[out.paths.length] = newPath;
         }
         if (Game.rail[l].left) {
           var newPath = {};
@@ -1338,7 +1338,7 @@ function Edit() {
           newPath.y1 = Game.rail[l].point.y;
           newPath.x2 = Game.rail[l].point.x - 1;
           newPath.y2 = Game.rail[l].point.y;
-          out.paths[] = newPath;
+          out.paths[out.paths.length] = newPath;
         }
         if (Game.rail[l].right) {
           var newPath = {};
@@ -1346,7 +1346,7 @@ function Edit() {
           newPath.y1 = Game.rail[l].point.y;
           newPath.x2 = Game.rail[l].point.x + 1;
           newPath.y2 = Game.rail[l].point.y;
-          out.paths[] = newPath;
+          out.paths[out.paths.length] = newPath;
         }
       }
       
