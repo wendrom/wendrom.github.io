@@ -1,0 +1,14 @@
+
+body {
+	background: #A6534D;
+	color: #EEE;
+	font: normal 16px/100% Verdana, sans-serif;
+}
+
+.notification {
+	background: #FAAE1C;
+	color: #474133;
+	padding: 10px;
+	text-align: center;
+	width: 100%;
+}
