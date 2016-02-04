@@ -1,17 +1,26 @@
 <!doctype html>
 <html>
 	<head>
-		<title></title>
+		<title>{{ page.title }}</title>
 		<link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300|Amatic+SC:700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="/assets/css/default.css">
 	</head>
 	<body>
-		<div class="notification">
+		<div class="big-notification">
 			Under Construction
 		</div>
-		<header>
-			
+		<header class="main-header">
+			<a href="/" class="logo">FELIX</a>
+			<a href="/contact">Contact</a>
+			<a href="/blog">Blog</a>
+			<a href="/projects">Projects</a>
 		</header>
-		{{ content }}
+		<div class="content">
+			{{ content }}
+		</div>
+		<div class="background">
+			<img src="{{ page.background }}">
+		</div>
 	</body>
 </html>
