@@ -69,6 +69,7 @@ header.main a.logo:hover {
   margin-right: 10px;
 	position: absolute;
 	top: calc(50% - 30px);
+	text-decoration: none;
   width: 100%;
 	z-index: 1000;
 }
