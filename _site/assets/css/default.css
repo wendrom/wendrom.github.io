@@ -3,11 +3,12 @@ body {
 	background: #111;
 	color: #DEE;
 	font: normal 16px/100% Verdana, sans-serif;
+	padding-bottom: 100px;
 }
 
 p {
 	font: normal 22px/140% Verdana, sans-serif;
-	padding: 20px;
+	padding: 10px 40px;
 	transition: all .3s;
 }
 
@@ -24,9 +25,9 @@ p em {
 header.title {
 	background: rgba(0, 0, 0, 0.3);
 	font: normal 48px/100% Roboto;
-	margin-bottom: 30px;
 	padding: 20px 40px;
 	transition: all .4s;
+	margin-bottom: 10px;
 }
 
 a {
@@ -114,13 +115,26 @@ header.main a.logo:hover {
 
 @media (max-width: 600px) {
 	
+	p {
+		font: normal 18px/150% Verdana, sans-serif;
+		padding: 10px 30px;
+	}
+	
 	p.main {
 		font: normal 30px/140% Roboto;
 		padding: 0 30px 30px;
 	}
 	
+	header.title {
+		font: normal 30px/100% Roboto;
+		margin-bottom: 20px;
+		padding: 20px 30px;
+	}
+	
 	header.main a.go {
-		padding: 20px 5px;
+		float: right;
+		clear: right;
+		padding: 2px;
 	}
 	
 }
